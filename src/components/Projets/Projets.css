@@ -1,0 +1,13 @@
+.projects {
+  padding: 20px;
+}
+
+.projects h2 {
+  margin: 0 45px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}

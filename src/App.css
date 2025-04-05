@@ -1,0 +1,44 @@
+/* Styles de base pour la navigation */
+* {
+  margin: 0 ;
+  padding: 0;
+}
+body {
+  padding-top: 120px;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  position: fixed;
+  margin: 0 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+
+/* Liste de navigation */
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin-right: 15px;
+  gap: 45px;
+}
+
+.navbar ul li {
+  position: relative;
+}
+
+
