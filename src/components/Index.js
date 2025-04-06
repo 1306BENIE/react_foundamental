@@ -6,3 +6,4 @@ export * from "./Projets";
 export * from "./Contacts";
 export * from "./Home"
 export * from "./ProjectCard";
+export * from "./ErrorBoundary"
