@@ -1,25 +1,26 @@
 import React from 'react';
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
-import { Presentation, Projets, Contacts, Home } from "./components"
-import { ErrorBoundary } from "./components"
+import { Presentation, Projets, Contacts, Home } from "./components";
+import {ErrorBoundary} from "./components";
 import "./index.css";
 
+const fetchProjects = async () => {
+  const API_URL = "https://jsonplaceholder.typicode.com/albums";
+  const response = await fetch(API_URL);
+  const data = await response.json();
+  return {
+    Projet: data
+  };
+};
 
 const router = createBrowserRouter([
   {
     path: "/",
-    loader: async () => {
-      const API_URL = "https://jsonplaceholder.typicode.com/albums";
-      const RESPONSE = await fetch(API_URL);
-      const DATA = await RESPONSE.json();
-      // console.log(DATA)
-      return {
-        Projet: DATA
-      };
-    },
+    loader: fetchProjects,
     Component: App,
+    errorElement: <ErrorBoundary />, // facultatif
     children: [
       {
         index: true,
@@ -41,8 +42,6 @@ const router = createBrowserRouter([
   }
 ]);
 
-const root = document.getElementById("root");
-
-ReactDOM.createRoot(root).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
 );

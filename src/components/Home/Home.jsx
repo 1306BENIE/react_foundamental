@@ -1,15 +1,15 @@
 import React from 'react';
-import { useLoaderData } from "react-router";
 import { Presentation } from '../Presentation';
 import { Projets } from '../Projets';
 import { Contacts } from '../Contacts';
+import { useOutletContext } from "react-router-dom";
 
 const Home = () => {
-  const { Projet } = useLoaderData();
+  const { Projet } = useOutletContext();
   return (
     <>
       <Presentation />
-      <Projets projectData= {Projet}/>
+      <Projets projectData={Projet}/>
       <Contacts />
     </>
   );

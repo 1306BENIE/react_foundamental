@@ -1,6 +1,6 @@
 import React from "react";
 import { Header } from "./components";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLoaderData } from "react-router-dom";
 import "./App.css";
 
 const NavItems = [
@@ -10,13 +10,14 @@ const NavItems = [
 ];
 
 const App = () => {
+  const { Projet } = useLoaderData();
   return (
     <>
       <section className="navbar">
         <Header NavItems={NavItems} />
       </section>
       <main>
-        <Outlet />
+        <Outlet context={{ Projet }}/>
       </main>
     </>
   );
