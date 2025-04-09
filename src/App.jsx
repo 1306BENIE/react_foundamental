@@ -10,14 +10,13 @@ const NavItems = [
 ];
 
 const App = () => {
-  const { Projet } = useLoaderData();
   return (
     <>
       <section className="navbar">
         <Header NavItems={NavItems} />
       </section>
       <main>
-        <Outlet context={{ Projet }}/>
+        <Outlet />
       </main>
     </>
   );

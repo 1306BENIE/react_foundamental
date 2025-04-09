@@ -2,10 +2,11 @@ import React from 'react';
 import { Presentation } from '../Presentation';
 import { Projets } from '../Projets';
 import { Contacts } from '../Contacts';
-import { useOutletContext } from "react-router-dom";
+import useJSONPLACEHOLDERGETWAY from '../../service/apiJsonPlaceHolder.service';
+
 
 const Home = () => {
-  const { Projet } = useOutletContext();
+  const { Projet } = useJSONPLACEHOLDERGETWAY();
   return (
     <>
       <Presentation />
