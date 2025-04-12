@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 const API_URL = "https://jsonplaceholder.typicode.com/albums";
 
 const useJSONPLACEHOLDERGETWAY = () =>{
-  const [Projet, setProjet] = useState([])
+  const [projet, setProjet] = useState([])
 
   const GetProjet = async() => {
     try {
@@ -20,7 +20,7 @@ const useJSONPLACEHOLDERGETWAY = () =>{
     GetProjet()
   }, [])
   return {
-    Projet
+    projet
   }
 }
 

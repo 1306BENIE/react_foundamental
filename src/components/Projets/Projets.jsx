@@ -1,19 +1,17 @@
 import React from "react";
 import { ProjectCard } from "../ProjectCard";
-
-
 import "./Projets.css";
+import useJSONPLACEHOLDERGETWAY from "../../service/apiJsonPlaceHolder.service";
 
-const Projets = ({ projectData }) => {
-  // On récupère le contexte brut au lieu de faire une déstructuration
-  
+const Projets = () => {
+  const { projet } = useJSONPLACEHOLDERGETWAY();
 
   return (
     <section className="projects">
       <h2>Projets</h2>
       <div className="projects-container">
-        {projectData.map((project, index) => (
-          <ProjectCard key={index} title={project.title} />
+        {projet.map((projet, index) => (
+          <ProjectCard key={index} title={projet.title} />
         ))}
       </div>
     </section>

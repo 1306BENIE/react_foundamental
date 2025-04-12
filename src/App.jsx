@@ -1,6 +1,6 @@
 import React from "react";
 import { Header } from "./components";
-import { Outlet, useLoaderData } from "react-router-dom";
+import { Outlet} from "react-router-dom";
 import "./App.css";
 
 const NavItems = [
@@ -16,7 +16,7 @@ const App = () => {
         <Header NavItems={NavItems} />
       </section>
       <main>
-        <Outlet />
+        <Outlet/>
       </main>
     </>
   );
